@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.3'
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    //release时需要把hyphenatechatsdk的依赖注释掉，sdk已经被打成jar包放在libs底下
+
+//    api 'com.hyphenate:hyphenate-sdk:3.3.7'
+    implementation 'com.github.bumptech.glide:glide:3.+'
+//    implementation 'com.google.android.gms:play-services-base:11.4.0'
+    implementation 'com.android.support:appcompat-v7:26.+'
+}

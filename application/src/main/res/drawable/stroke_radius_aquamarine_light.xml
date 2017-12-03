@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FIXME 这里使用inset标签增加内边距 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item app:alpha="@dimen/disabled_alpha_material_light" android:state_enabled="false">
+        <shape>
+            <corners android:radius="@dimen/radius_small"/>
+            <stroke android:width="@dimen/divider_primary" android:color="@color/primary_text_default_app_light" android:dashGap="2dp" android:dashWidth="5dp"/>
+        </shape>
+    </item>
+    <item android:state_checked="true">
+        <shape>
+            <corners android:radius="@dimen/radius_small"/>
+            <stroke android:width="@dimen/divider_primary" android:color="@color/primary_text_checked_app_aquamarine_light"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="@dimen/radius_small"/>
+            <stroke android:width="@dimen/divider_primary" android:color="@color/primary_text_default_app_light"/>
+        </shape>
+    </item>
+</selector>

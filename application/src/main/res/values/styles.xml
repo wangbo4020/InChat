@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- TabLayout -->
+    <style name="App.Widget.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/App.TextAppearance.Tab</item>
+        <item name="tabSelectedTextColor">?attr/colorAccent</item>
+    </style>
+
+    <style name="App.TextAppearance.Tab" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <!-- BottomNavigationView -->
+    <style name="App.Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="itemIconTint">?android:attr/textColorPrimary</item>
+        <item name="itemTextColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="App.Widget.Button" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <!--<item name="android:background">@drawable/btn_app_aquamarine_light</item>-->
+    </style>
+
+    <style name="App.Widget.Button.Small" parent="Widget.AppCompat.Button.Small">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <!--<item name="android:background">@drawable/btn_app_aquamarine_light</item>-->
+    </style>
+
+    <style name="App.Widget.CompoundButton.RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/stroke_radius_aquamarine_light</item>
+        <item name="android:padding">7.25dp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="App.Widget.Button.ButtonBar" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:minWidth">112dp</item>
+        <!--<item name="android:minHeight">48dp</item>-->
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:background">@drawable/btn_app_aquamarine_light</item>
+    </style>
+
+    <style name="App.Widget.Light.SegmentedButton" parent="Base.AppWidget.Light.SegmentedButton">
+        <item name="android:background">@drawable/stroke_radius_aquamarine_light</item>
+    </style>
+
+</resources>

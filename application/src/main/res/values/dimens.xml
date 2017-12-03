@@ -1,0 +1,12 @@
+<resources><!-- * 0.8888888888888889 -->
+
+    <dimen name="space_primary">8dp</dimen>
+    <dimen name="margin_primary">10dp</dimen>
+    <dimen name="space_horizontal">0dp</dimen>
+
+    <dimen name="divider_thick">8dp</dimen>
+    <dimen name="divider_primary">1px</dimen>
+
+    <dimen name="radius_small">3dp</dimen>
+
+</resources>

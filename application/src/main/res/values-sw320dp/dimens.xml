@@ -1,0 +1,8 @@
+<resources><!-- * 0.8888888888888889 -->
+
+    <dimen name="space_primary">7dp</dimen>
+    <dimen name="margin_primary">8.9dp</dimen>
+
+    <dimen name="divider_thick">7dp</dimen>
+
+</resources>

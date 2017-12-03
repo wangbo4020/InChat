@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+    <style name="Base.AppWidget.Light.SegmentedButton" parent="android:Holo.Light.SegmentedButton" />
+
+    <!-- application theme. -->
+    <style name="App.Theme" parent="Base.AppTheme">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/aquamarine</item>
+        <item name="colorButtonNormal">?attr/colorAccent</item>
+
+        <item name="android:divider">@drawable/divider_primary</item>
+        <item name="android:dividerHeight">@dimen/divider_primary</item>-->
+
+        <!--<item name="android:colorBackground">@color/background_app_light</item>
+        <item name="android:colorForeground">@color/foreground_app_light</item>
+        <item name="android:colorForegroundInverse">@color/foreground_app_dark</item>
+        <item name="android:windowBackground">@color/window_background_primary</item>-->
+
+        <!--<item name="android:textColorPrimary">@color/primary_text_app_light</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_app_dark</item>
+
+        <item name="android:buttonStyle">@style/App.Widget.Button</item>
+        <item name="android:buttonStyleSmall">@style/App.Widget.Button.Small</item>
+        <item name="android:radioButtonStyle">@style/App.Widget.CompoundButton.RadioButton</item>
+        <item name="android:buttonBarButtonStyle">@style/App.Widget.Button.ButtonBar</item>
+        <item name="android:segmentedButtonStyle">@style/App.Widget.Light.SegmentedButton</item>-->
+    </style>
+
+    <style name="App.Theme.NoActionBar" parent="App.Theme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="App.Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+
+    <!--<style name="App.Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+</resources>

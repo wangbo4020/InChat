@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><!-- * 1.141666666666667 -->
+
+    <dimen name="space_primary">9.15dp</dimen>
+    <dimen name="margin_primary">11.15dp</dimen>
+
+    <dimen name="divider_thick">9.1dp</dimen>
+
+
+</resources>

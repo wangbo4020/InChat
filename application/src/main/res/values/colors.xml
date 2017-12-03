@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <color name="color_primary">#3F51B5</color>
+    <color name="color_primary_dark">#303F9F</color>
+    <color name="aquamarine">#FF4081</color>
+    -->
+    <color name="aquamarine">#61ce8f</color>
+    <color name="magenta">#de4665</color>
+
+    <color name="window_background_primary">#181A1F</color>
+
+    <color name="foreground_app_light">#4a4a4a</color>
+    <color name="foreground_app_dark">@android:color/white</color>
+    <color name="background_app_light">#181A1F</color>
+
+    <color name="primary_text_default_app_light">#4a4a4a</color>
+    <color name="primary_text_default_app_dark">@android:color/white</color>
+
+    <color name="primary_text_checked_app_aquamarine_light">@color/aquamarine</color>
+    <color name="primary_text_checked_app_magenta_light">@color/magenta</color>
+
+</resources>

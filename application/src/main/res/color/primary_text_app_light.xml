@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item android:state_enabled="false"
+          app:alpha="?android:attr/disabledAlpha"
+          android:color="?android:attr/colorForeground"/>-->
+    <item android:state_enabled="false"
+          app:alpha="@dimen/disabled_alpha_material_light"
+          android:color="?android:attr/colorForeground"/>
+    <item android:state_checked="true"
+          android:color="?attr/colorAccent"/>
+    <item android:color="?android:attr/colorForeground"/>
+</selector>
+
+<!-- primary_text_app_aquamarine_light.xml -->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:state_enabled="false"
+        app:alpha="?android:attr/disabledAlpha"
+        android:color="@color/primary_text_default_app_light"/>
+    <item android:state_checked="true"
+        android:color="@color/primary_text_checked_app_aquamarine_light"/>
+    <item android:color="@color/primary_text_default_app_light"/>
+</selector>
+-->

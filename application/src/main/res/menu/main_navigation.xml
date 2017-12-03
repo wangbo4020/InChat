@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/fragment_main">
+
+    <item
+        android:id="@+id/navigation_message"
+        android:icon="@drawable/main_navi_message"
+        android:title="@string/main_navi_message" />
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/main_navi_chat"
+        android:title="@string/main_navi_chat" />
+
+    <item
+        android:id="@+id/navigation_words"
+        android:icon="@drawable/main_navi_words"
+        android:title="@string/main_navi_words" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/main_navi_setting"
+        android:title="@string/main_navi_setting" />
+</menu>
