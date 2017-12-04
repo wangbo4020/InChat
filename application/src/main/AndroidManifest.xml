@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.inchat">
+
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -25,9 +27,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/App.Theme">
-        <meta-data
-            android:name="EASEMOB_APPKEY"
-            android:value="kingofidiao#sparrow" />
 
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
@@ -37,14 +36,46 @@
             </intent-filter>
         </activity>
 
-
         <!-- SMSSDK -->
-        <meta-data android:name="Mob-AppKey" android:value="2240d321d6a60"/>
-        <meta-data android:name="Mob-AppSecret" android:value="4d60f986c5315d351e21205bce6de7ab"/>
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="2240d321d6a60" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="4d60f986c5315d351e21205bce6de7ab" />
+
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- Ease IM -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="kingofidiao#sparrow" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true"
+            tools:ignore="ExportedService" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

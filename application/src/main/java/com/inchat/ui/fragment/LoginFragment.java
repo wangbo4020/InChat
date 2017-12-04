@@ -39,11 +39,16 @@ import static cn.smssdk.SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE;
 
 /**
  * Created by Dylan on 2017/12/2.
+ * FIXME 后期用rxjava优化代码
  */
 
 public class LoginFragment extends BaseFragment implements View.OnClickListener {
 
     public static final String TAG = "LoginFragment";
+
+    public static LoginFragment newInstance() {
+        return new LoginFragment();
+    }
 
     public interface OnLoginListener {
         /**
@@ -60,26 +65,17 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
         void onLoginFailed(int errcode, String reason);
     }
 
-    public static LoginFragment newInstance() {
-        return new LoginFragment();
-    }
-
     private TextView tvCountryCode;
     private EditText etTelephone;
     private EditText etVerifyCode;
     private TextView tvSendVerifyCode;
     private ContentLoadingProgressBar progressWait;
 
+    // FIXME 使用rxjava操作符实现
     private VerifyCodeTimer mVerifyCodeTimer;
     private ProgressDialog mProgressDialog;
 
     private OnLoginListener mListener;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        MobSDK.init(getContext());
-        SMSSDK.registerEventHandler(mSmsSdkEvent); //注册短信回调
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -89,6 +85,13 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
         } else if (getActivity() instanceof OnLoginListener) {
             mListener = (OnLoginListener) getActivity();
         }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MobSDK.init(getContext());
+        SMSSDK.registerEventHandler(mSmsSdkEvent); //注册短信回调
     }
 
     @Override
@@ -109,16 +112,16 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
     }
 
     @Override
-    public void onDetach() {
-        mListener = null;
-        super.onDetach();
-    }
-
-    @Override
     public void onDestroy() {
         SMSSDK.unregisterEventHandler(mSmsSdkEvent);
         if (mVerifyCodeTimer != null) mVerifyCodeTimer.cancel();
         super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        mListener = null;
+        super.onDetach();
     }
 
     @Override
@@ -135,6 +138,8 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
             case R.id.btn_login:
                 if (mProgressDialog == null) {
                     mProgressDialog = new ProgressDialog(getContext());
+                    mProgressDialog.setCanceledOnTouchOutside(false);
+                    mProgressDialog.setTitle(R.string.login_ing);
                 }
                 mProgressDialog.show();
                 String verifyCode = etVerifyCode.getText().toString();
@@ -261,6 +266,8 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
                                                 }
+                                                EMClient.getInstance().groupManager().loadAllGroups();
+                                                EMClient.getInstance().chatManager().loadAllConversations();
                                                 runOnUiThread(() -> {
                                                     if (mProgressDialog != null) {
                                                         mProgressDialog.dismiss();

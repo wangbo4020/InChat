@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/menu_remove_simple"
+        android:title="@string/message_remove_simple"/>
+
+    <item
+        android:id="@+id/menu_remove_history"
+        android:title="@string/message_remove_history"/>
+
+</menu>
